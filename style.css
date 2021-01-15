@@ -1,0 +1,233 @@
+@import url("https://fonts.googleapis.com/css2?family=Quantico&display=swap");
+
+/* variables */
+:root {
+	--color-primary: rgb(201, 206, 231);
+	--color-secondary: rgb(238, 238, 241);
+	--color-font: rgb(10, 10, 10);
+	--button-main-bg: radial-gradient(
+		circle,
+		rgba(201, 206, 231, 1) 0%,
+		rgb(166, 175, 224) 100%
+    );
+    --button-remove-bg: black;
+	--box-shadow-container: 0 0 2rem rgba(0, 0, 0, 0.7);
+	--box-shadow-input: 0 0.2rem 1rem 0.2rem rgba(0, 0, 0, 0.4);
+	--box-shadow-input-focus: 0 0.2rem 1rem 0.2rem rgba(0, 0, 0, 0.6);
+	--box-shadow-btn: 0 0 0.6rem rgba(0, 0, 0, 0.7);
+}
+[data-theme="dark"] {
+	--color-primary: rgb(29, 10, 29);
+	--color-secondary: rgb(36, 33, 36);
+	--color-font: whitesmoke;
+	--button-main-bg: radial-gradient(
+		circle,
+		rgba(83, 10, 83, 1) 0%,
+		rgb(31, 9, 31) 100%
+	);
+	--box-shadow-container: 0 0 2rem rgba(255, 255, 255, 0.3);
+	--box-shadow-input: 0 0.2rem 1rem 0.2rem rgba(255, 255, 255, 0.4);
+	--box-shadow-input-focus: 0 0.2rem 1rem 0.2rem rgba(255, 255, 255, 0.6);
+	--box-shadow-btn: 0 0 0.6rem rgba(255, 255, 255, 0.5);
+}
+
+/* resets */
+* {
+	padding: 0;
+	margin: 0;
+}
+
+html {
+	box-sizing: border-box;
+}
+
+body {
+	font-family: "Quantico", sans-serif;
+	color: var(--color-font);
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	text-align: center;
+	background-color: var(--color-primary);
+	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='199' viewBox='0 0 100 199'%3E%3Cg fill='%23414141' fill-opacity='0.4'%3E%3Cpath d='M0 199V0h1v1.99L100 199h-1.12L1 4.22V199H0zM100 2h-.12l-1-2H100v2z'%3E%3C/path%3E%3C/g%3E%3C/svg%3E");
+	transition: all 0.7s;
+}
+
+.container {
+	max-width: 95%;
+	min-height: 400px;
+	width: 600px;
+	background-color: var(--color-secondary);
+	margin-top: 2rem;
+	margin-bottom: 1rem;
+	border-radius: 1rem;
+	box-shadow: var(--box-shadow-container);
+}
+
+header {
+	position: relative;
+	width: 100%;
+	padding-top: 2.5rem;
+	text-transform: uppercase;
+}
+
+h1 {
+	font-size: 2.5rem;
+}
+
+.mode {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	position: absolute;
+	top: 1rem;
+	right: 1rem;
+}
+
+.mode i {
+	font-size: 2rem;
+	margin-right: 0.5rem;
+}
+
+.fa-sun,
+.fa-moon {
+	color: rgb(216, 216, 22);
+}
+
+/* The switch - the box around the slider */
+.switch {
+	position: relative;
+	display: inline-block;
+	width: 60px;
+	height: 34px;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+	opacity: 0;
+	width: 0;
+	height: 0;
+}
+
+/* The slider */
+.slider {
+	position: absolute;
+	cursor: pointer;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: #ccc;
+	-webkit-transition: 0.4s;
+	transition: 0.4s;
+}
+
+.slider:before {
+	position: absolute;
+	content: "";
+	height: 26px;
+	width: 26px;
+	left: 4px;
+	bottom: 4px;
+	background-color: white;
+	-webkit-transition: 0.4s;
+	transition: 0.4s;
+}
+
+input:checked + .slider {
+	background-color: rgb(22, 22, 22);
+}
+
+input:focus + .slider {
+	box-shadow: 0 0 1px rgb(22, 22, 22);
+}
+
+input:checked + .slider:before {
+	-webkit-transform: translateX(26px);
+	-ms-transform: translateX(26px);
+	transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+	border-radius: 34px;
+}
+
+.slider.round:before {
+	border-radius: 50%;
+}
+
+/* form */
+#new-task {
+	height: 3rem;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	margin: 0.5rem 1rem 2rem;
+}
+
+#new-task label {
+	flex: 1;
+	margin-right: 1rem;
+}
+
+#task-input {
+	height: 100%;
+	width: 100%;
+	background-color: whitesmoke;
+	font-family: inherit;
+	font-size: 1.2rem;
+	border: none;
+	padding-left: 0.5rem;
+	border-radius: 0.5rem;
+
+	border-bottom: 2px solid rgba(0, 0, 0, 0.4);
+	box-shadow: var(--box-shadow-input);
+	transition: all 0.5s;
+}
+#task-input:focus {
+	border-bottom: 4px solid rgba(0, 0, 0, 0.6);
+	box-shadow: var(--box-shadow-input-focus);
+}
+
+button {
+	cursor: pointer;
+	min-width: 3rem;
+	min-height: 3rem;
+	border-radius: 50%;
+    border: none;
+}
+button:hover {
+    filter: brightness(115%);
+}
+
+.add-task {
+	background: var(--button-main-bg);
+	color: var(--color-font);
+	box-shadow: var(--box-shadow-btn);
+}
+.remove-task {
+	background: var(--color-secondary);
+	color: red;
+	border: 2px solid red;
+}
+
+.task-list {
+	margin-bottom: 1rem;
+}
+.task-list p {
+    margin-right: .8rem;
+    text-align: start;
+}
+
+.task {
+	list-style-type: none;
+	font-size: 1.2rem;
+	min-height: 3rem;
+	margin: 0.5rem 1rem 0.5rem;
+	position: relative;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}

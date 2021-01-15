@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="https://www.google.com/s2/u/0/favicons?domain=jtniemi.net" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="style.css">
+    <title>ToDo app</title>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>Your to-dos</h1>
+            <div class="mode">
+                <i class="fas fa-sun" id="toggle-icon"></i>
+                <label class="switch">
+                    <input type="checkbox" id="toggle-mode">
+                    <span class="slider round"></span>
+                </label>
+            </div>
+        </header>
+        <main>
+            <!-- new task input -->
+            <form id="new-task">
+                <label for="task-input">
+                    <input type="text" id="task-input" autocomplete="off">
+                </label>
+                <button type="submit" class="add-task"><i class="fas fa-plus"></i></button>
+            </form>
+            <!-- task list -->
+            <div class="tasks-container">
+                <ul class="task-list" id="task-list">
+                </ul>
+            </div>
+        </main>
+    </div>
+    <!-- scripts -->
+    <!-- handle light & dark mode -->
+    <script src="theme.js"></script>
+    <!-- main app -->
+    <script src="app.js"></script>
+</body>
+</html>
