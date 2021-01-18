@@ -200,9 +200,13 @@ button {
 	min-height: 3rem;
 	border-radius: 50%;
 	border: none;
+	outline: none;
 }
 button:hover {
 	filter: brightness(115%);
+}
+button:focus {
+	outline: none;
 }
 
 .add-task {
@@ -229,6 +233,8 @@ button:hover {
 	margin-right: 0.8rem;
 	text-align: start;
 	word-break: break-word;
+	flex: 1;
+	cursor: pointer;
 }
 
 .task {
@@ -240,6 +246,11 @@ button:hover {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
+}
+
+.completed {
+	text-decoration: line-through;
+	color: rgb(100, 100, 100);
 }
 
 /* animations */
