@@ -37,7 +37,10 @@ function addTask(e) {
 // remove task from tasks array, update localStorage
 function removeTask(index) {
     tasks.splice(index, 1);
-    buildDOM();
+    document.querySelectorAll(".task")[index].classList.add("fade-up");
+    setTimeout(() => {
+        buildDOM();
+    }, 500);
 }
 
 // event listeners

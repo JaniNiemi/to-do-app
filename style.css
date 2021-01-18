@@ -228,6 +228,7 @@ button:hover {
 .task-list p {
 	margin-right: 0.8rem;
 	text-align: start;
+	word-break: break-word;
 }
 
 .task {
@@ -239,4 +240,26 @@ button:hover {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
+}
+
+/* animations */
+@keyframes fade-up {
+	from {
+		transform: translateY(0);
+		opacity: 1;
+	}
+	to {
+		transform: translateY(-3rem);
+		opacity: 0;
+	}
+}
+.fade-up {
+	animation: fade-up 0.5s linear;
+}
+
+/* media querys */
+@media screen and (max-width: 600px) {
+	header {
+		padding-top: 3rem;
+	}
 }
