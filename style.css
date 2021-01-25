@@ -3,7 +3,7 @@
 /* variables */
 :root {
 	--color-primary: rgb(201, 206, 231);
-	--color-secondary: rgb(238, 238, 241);
+	--color-secondary: rgb(245, 245, 245);
 	--color-font: rgb(10, 10, 10);
 	--button-main-bg: radial-gradient(
 		circle,
@@ -11,11 +11,11 @@
 		rgb(166, 175, 224) 100%
 	);
 	--button-remove-bg: black;
-	--box-shadow-container: 0 0 2rem rgba(0, 0, 0, 0.7);
-	--box-shadow-input: 0 0.2rem 1rem 0.2rem rgba(0, 0, 0, 0.4);
-	--box-shadow-input-focus: 0 0.2rem 1rem 0.2rem rgba(0, 0, 0, 0.6);
-	--box-shadow-btn: 0 0.2rem 0.6rem rgba(0, 0, 0, 0.7);
-	--box-shadow-btn-click: 0 -0.2rem 0.3rem rgba(0, 0, 0, 0.7);
+	--box-shadow-container: 0 0 1rem rgba(0, 0, 0, 0.7);
+	--box-shadow-input: 0 0.2rem 1rem rgba(0, 0, 0, 0.4);
+	--box-shadow-input-focus: 0 0.2rem 1rem 0.1rem rgba(0, 0, 0, 0.6);
+	--box-shadow-btn: 0 0.2rem 0.6rem rgba(0, 0, 0, 0.5);
+	--box-shadow-btn-click: 0 -0.2rem 0.3rem rgba(0, 0, 0, 0.5);
 }
 [data-theme="dark"] {
 	--color-primary: rgb(29, 10, 29);
@@ -26,11 +26,11 @@
 		rgba(83, 10, 83, 1) 0%,
 		rgb(31, 9, 31) 100%
 	);
-	--box-shadow-container: 0 0 2rem rgba(255, 255, 255, 0.3);
-	--box-shadow-input: 0 0.2rem 1rem 0.2rem rgba(255, 255, 255, 0.4);
-	--box-shadow-input-focus: 0 0.2rem 1rem 0.2rem rgba(255, 255, 255, 0.6);
-	--box-shadow-btn: 0 0.2rem 0.6rem rgba(255, 255, 255, 0.5);
-	--box-shadow-btn-click: 0 -0.1rem 0.3rem rgba(255, 255, 255, 0.5);
+	--box-shadow-container: 0 0 1rem rgba(255, 255, 255, 0.3);
+	--box-shadow-input: 0 0.2rem 1rem rgba(255, 255, 255, 0.4);
+	--box-shadow-input-focus: 0 0.2rem 1rem 0.1rem rgba(255, 255, 255, 0.6);
+	--box-shadow-btn: 0 0.2rem 0.5rem rgba(255, 255, 255, 0.3);
+	--box-shadow-btn-click: 0 -0.1rem 0.3rem rgba(255, 255, 255, 0.3);
 }
 
 /* resets */
